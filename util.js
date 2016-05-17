@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
  * @param {object} obj
  * Object will be displayed in the debug output
  * @example
- * .debug('The title of what is being tested', objectToBeTested);
+ * util.debug('The title of what is being tested', { objectToBeTested: true });
  */
 exports.debug = (title, obj) => {
   if (process.env.DEBUG) {
@@ -26,8 +26,8 @@ exports.debug = (title, obj) => {
  * @param {function} callback
  * Callback Function to handle the output.
  * @example
- * .hash('MySecretPassword', (err, result) => {
- *   util.debug('Password Unhash Attempt', {dispName: cryptedData.dispName, result: result});
+ * util.hash('MySecretPassword', (err, result) => {
+ *   util.debug('Password Hash Attempt', { error: err, result: result });
  * });
  */
 exports.hash = (str, callback) => {
@@ -46,15 +46,14 @@ exports.hash = (str, callback) => {
  * @param {function} callback
  * Callback Function.
  * @example
- * .unhash('unhashed', cryptedData.hash, (err, result) => {
- *   util.debug('Password Unhash Attempt', {dispName: cryptedData.dispName, result: result});
+ * util.unhash('unhashed', cryptedData.hash, (err, result) => {
+ *   util.debug('Password Unhash Attempt', { error: err, result: result });
  * });
  */
 exports.unhash = (pwdStr, targetHash, callback) => {
   bcrypt.compare(pwdStr, targetHash, callback);
   return true;
 };
-
 
 /**
  * @function scrubData
@@ -63,7 +62,7 @@ exports.unhash = (pwdStr, targetHash, callback) => {
  * @param {function} callback
  * Callback Function.
  * @example
- * .scrubData({ userInput: 'Never Trust Me, Always Sanatize me' });
+ * util.scrubData({ userInput: 'Never Trust Me, Always Sanatize me' });
  */
 exports.scrubData = (dirtyData) => {
   const cleanData = Object.assign(dirtyData, {
@@ -72,7 +71,6 @@ exports.scrubData = (dirtyData) => {
   return cleanData;
 };
 
-
 /**
  * @function ifExists
  * @param thing
@@ -80,7 +78,9 @@ exports.scrubData = (dirtyData) => {
  * @param {function} callback
  * If the thing is not undefined callback
  * @example
- * .ifExists({ dbResponse: true });
+ * util.ifExists({ dbResponse: true }, () => {
+ *  util.debug('The database responded!', true);
+ * });
  */
 exports.ifExists = (thing, callback) => {
   if (typeof thing !== 'undefined') {
