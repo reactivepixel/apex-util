@@ -1,0 +1,24 @@
+{
+  "name": "apex-util",
+  "version": "1.0.0",
+  "description": "Basic set of tools for use in a variety of Apextion Projects",
+  "main": "util.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utility",
+    "apextion",
+    "debug"
+  ],
+  "author": "Chris Chapman",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.1.1",
+    "bcrypt": "^0.8.6"
+  }
+}
