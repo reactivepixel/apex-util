@@ -20,6 +20,20 @@ exports.debug = (title, obj) => {
 };
 
 /**
+ * @function log
+ * @param {string} title
+ * Title to display on the debug output
+ * @param {object} obj
+ * Object will be displayed in the debug output
+ * @example
+ * util.log('The title of what is being tested', { objectToBeTested: true });
+ */
+exports.log = (title, obj) => {
+  console.log(title, obj,
+    '\n===========================================\n\n');
+};
+
+/**
  * @function hash
  * @param {string} str
  * The string to hash
