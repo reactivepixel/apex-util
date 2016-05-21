@@ -1,6 +1,6 @@
 {
   "name": "apex-util",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Basic set of tools for use in a variety of Apextion Projects",
   "main": "util.js",
   "scripts": {

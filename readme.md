@@ -29,8 +29,4 @@ const util = require('apex-util');
 
 util.debug('The title of what is being tested', { objectToBeTested: true });
 ```
-> The debugger will only console log if the Environmental Variable DEBUG set to true. For testing, run your node script with the following command:
-
-> ``` shell
-DEBUG=true node app.js
-```
+> The debugger will only console log if the Environmental Variable DEBUG set to true. For testing, run your node script with the following command: ```DEBUG=true node app.js```
