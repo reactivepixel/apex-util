@@ -19,6 +19,5 @@
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
-    "bcrypt": "^0.8.6"
   }
 }
