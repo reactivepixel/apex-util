@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt');
-
 /**
  * @function debug
  * @param {string} title
@@ -29,44 +27,10 @@ exports.debug = (title, obj) => {
  * util.log('The title of what is being tested', { objectToBeTested: true });
  */
 exports.log = (title, obj) => {
-  console.log(title, obj,
+  console.log(
+    '\n\n===========================================\n',
+    title, obj,
     '\n===========================================\n\n');
-};
-
-/**
- * @function hash
- * @param {string} str
- * The string to hash
- * @param {function} callback
- * Callback Function to handle the output.
- * @example
- * util.hash('MySecretPassword', (err, result) => {
- *   util.debug('Password Hash Attempt', { error: err, result: result });
- * });
- */
-exports.hash = (str, callback) => {
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(str, salt, callback);
-  });
-  return true;
-};
-
-/**
- * @function unhash
- * @param {string} pwdStr
- * The string of the user's password to unhash
- * @param {string} targetHash
- * The hash to be unhashed
- * @param {function} callback
- * Callback Function.
- * @example
- * util.unhash('unhashed', cryptedData.hash, (err, result) => {
- *   util.debug('Password Unhash Attempt', { error: err, result: result });
- * });
- */
-exports.unhash = (pwdStr, targetHash, callback) => {
-  bcrypt.compare(pwdStr, targetHash, callback);
-  return true;
 };
 
 /**
