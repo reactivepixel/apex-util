@@ -1,32 +1,32 @@
-# Apex Util
+# Debug Tool Documentation
 
-A base set of utilities for use in a variety of Apextion Projects.
+## Example of Usage
 
-## Installation
+Instead of console.log() require the tool.js file
+and call the .debug() method passing in three arguments
+(title, output, level)
 
-```
-npm install apex-util --save
-```
+[code] to call a debug()
+[code] to activate debug_mode
 
-## Tool Usage
+### title: String
 
-### .log
-For when you need to write to the log.
+Should be a string that will prefix the output
+argument in the resulting console.log()
 
-``` javascript
-// app.js
-const util = require('apex-util');
+### output: Object
 
-util.log('Something needs to be saved to the log', { logMe: true });
-```
+Any object that will be suffixed onto the title
+argument in the resulting console.log()
 
-### .debug
-Require the package and use it to only display debug messages when you want your app to be in debug mode.
+### level: Integer
 
-``` javascript
-// app.js
-const util = require('apex-util');
+A number that indicates how fine grained the output
+of this particular output should be. Reference the **Debug Level Chart**
 
-util.debug('The title of what is being tested', { objectToBeTested: true });
-```
-> The debugger will only console log if the Environmental Variable DEBUG set to true. For testing, run your node script with the following command: ```DEBUG=true node app.js```
+## Debug Level Chart
+
+0. Production Environment Level Output
+1. Staging Environment Level Output
+2. General Debug Information for Development
+3. Very Detailed and in-depth Output.

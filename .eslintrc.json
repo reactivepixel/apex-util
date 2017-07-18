@@ -9,7 +9,8 @@
 	"rules": {
 		"new-cap": 0,
 		"prefer-template": 0,
-		"global-require": 0
+		"global-require": 0,
+    "no-console":0
 	},
 	"globals": {
 		"describe": true,
