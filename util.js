@@ -16,6 +16,6 @@ exports.log = (title, output, level) => {
   // you need to parseInt()
   if (parseInt(debugDetailLevel, 10) >= eventThresholdRequirement) {
     // Combine the title and output together in a .log
-    console.log(title, output);
+    console.log(title + '\n\t', output);
   }
 };
